@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding:0;
+}
+/* header css start */
+.header a{
+    display: block;
+}
+.header{
+    line-height: 0;
+    width: 1130px;
+    margin: 0 auto;
+}
+/* header css end */
+/* container css start */
+.container{
+    background: url("../images/1.jpg") center;
+    height: 588px;
+}
+.container .login-bar{
+    width: 1130px;
+    margin: 0 auto;
+}
+.container .login-form{
+    width: 410px;
+    height: 524px;
+    background: #ffffff;
+    float: right;
+    margin-top: 32px;
+}
+.container .top-text{
+    padding:27px 0 24px;
+    text-align: center;
+}
+.container .top-text{
+    font-size: 24px;
+}
+.container .top-text a{
+ text-decoration: none;
+    color: #f56600;
+}
+.container .border-line{
+    margin: 0 35px 0 42px;
+    border: 1px solid #e0e0e0;
+}
+.container .top-text a:first-child{
+    color: #666666;
+}
+.container .top-text a:hover{
+    color: #f56600
+}
+.container .login-input{
+    width: 348px;
+    margin: 0 auto;
+}
+.container .login-input input{
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    width: 306px;
+    height: 22px;
+    line-height: 22px;
+    padding: 13px 16px 13px 14px ;
+    display: block;
+    margin-bottom: 14px;
+}
+.container .login-content{
+    width: 348px;
+    margin:0 auto;
+}
+.container .login-btn input{
+    background-color: #f56600;
+    height: 50px;
+    width:100%;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+.container .small-text{
+    font-size: 14px;
+    color: #757575;
+}
+.container .small-text a{
+    text-decoration: none;
+    color: #757575;
+}
+.container .st-left a {
+    float: left;
+    color: #f56600;
+}
+.container .st-right{
+    float: right;
+}
+.clearfix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.container .st-right a:hover{color: #f56600}
+.container.login-type{
+    margin-top: 115px;
+}
+.container.login-type fieldset{
+    border:0;
+    border-top: 1px solid #bbb;
+    color: #bbb;
+    font-size: 14px;
+    padding-top: 20px;
+}
+.container .login-icon{
+    text-align: center;
+}
+.container .login-icon a {
+    width: 30px; ;
+    height: 30px;
+    background-color: #757575;
+    display: inline-block;
+    border-radius: 50%;
+    margin:0 17px ;
+}
+.container .login-icon i{
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/icons_type.png");
+    margin: 4px auto 0;
+}
+.container .qq i{
+    background-position: -19px 0;
+}
+.container .qq:hover{
+    background-color: #0086b3;
+}
+.container .sina i{
+    background-position: -38px 0;
+}
+.container .sina:hover{
+    background-color: #f56600;
+}
+.container  .weixin i{
+    background-position: -57px 0;
+    width: 23px;
+}
+.container  .wechat:hover{
+    background-color: #55a532;
+}
+.container .alipay i{
+    background-position: -84px 0;
+    width: 25px;
+}
+.container .alipay:hover{
+    background-color: #0086b3;
+}
+/* container css end */
