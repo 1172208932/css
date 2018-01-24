@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    var k =0;
+    for (var i=1;i<1000;i++){
+        aa(i);
+
+    }
+    function aa(n) {
+        if (n%3==0 && n%5==0 && n%7==0){
+            k++;
+            document.write(n+"  ")
+            if (k%6==0){
+                document.write("<br>")
+            }
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
