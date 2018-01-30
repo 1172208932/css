@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        ul{
+            list-style-type: none;
+        }
+        body{
+            background-color: black;
+        }
+        .box{
+            width: 492px;
+            height: 170px;
+            padding: 10px;
+            margin: 30px auto;
+            border-radius: 10px ;
+            background-color: #665e57;
+            overflow: hidden;/*溢出隐藏 */
+            position: relative;
+        }
+    .radiu-btn{
+        position: absolute;
+    }
+    .img-bar{
+        height:170px;
+        overflow: hidden;
+    }
+    img{
+        height: 179px;
+        width: 492px;
+    }
+    .radiu-btn li{
+        color: white;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        opacity: 0.7;
+        background-color: #f90;
+        border-radius: 50%;
+        float: left;
+        text-align: center;
+        line-height: 20px;
+        font-size: 14px;
+        }
+    .left-btn{
+        line-height: 17px;
+    }
+    .left-btn{
+        left: 10px;
+        bottom: 10px;
+
+        }
+    .right-btn{
+        right: 10px;
+        bottom: 10px;
+        }
+    .radiu-btn .active{
+        background-color: #f60;
+    }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="img-bar">
+        <ul class="radiu-btn left-btn">
+            <li><img src="../../img/01.jpg" alt=""></li>
+            <li><img src="../../img/02.jpg" alt=""></li>
+            <li><img src="../../img/03.jpg" alt=""></li>
+            <li><img src="../../img/04.jpg" alt=""></li>
+            <li><img src="../../img/05.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div>
+        <ul class="radiou-btn right-btn" >
+            <li>&lt;</li>
+            <li>&gt;</li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var aUl = document.getElementsByTagName("ul");
+    var aLbt = aUl[1]
+</script>
+</body>
+</html>

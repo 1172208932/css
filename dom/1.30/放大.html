@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+    div{
+        height: 400px;
+        width: 400px;
+        float: left;
+    }
+        img{
+            height: 400px;
+            width: 400px;
+        }
+        .small-box{
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 200px;
+            opacity: 0.3;
+            background-color: white;
+            height: 200px;
+
+        }
+        body{
+            background-color: black;
+        }
+        #img2{
+            width: 800px;
+            height: 800px;
+        }
+        #box2{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box" >
+    <img src="../../img/03.jpg" alt="">
+    <div class="small-box" style="display: none"></div>
+</div>
+<div id="box2">
+    <img id="img2" src="../../img/03.jpg" alt="">
+</div>
+<script>
+    var oXbox =document.getElementsByClassName("small-box")[0];
+    var aBox =document.getElementById("box");
+    var aBox2 =document.getElementById("box2");
+
+
+    aBox.onmouseover=function () {
+        oXbox.style.display="block";
+        aBox2.style.display="block";
+
+    }
+
+    aBox.onmouseout=function () {
+        oXbox.style.display="none";
+        aBox2.style.display="none"
+    }
+
+
+        aBox.onmousemove=function (e) {
+        var top =e.clientY-aBox.offsetWidth/2;
+            var left = e.clientX-aBox.offsetHeight/2;
+            if(top<0){
+                top=0
+            }
+            if (left<0){
+                left=0
+            }
+
+            var top2 =oXbox.clientY-aBox.offsetWidth/2;
+            var left2 = oXbox.clientX-aBox.offsetHeight/2;
+            if(top>top2){
+                top=top2;
+            }
+            if (left>left2){
+                left=left2;
+            }
+
+//            boxX = e.clientX;
+//            boxY = e.clientY;
+//            oXbox.style.top = e.clientY - 100 + "px";
+//            oXbox.style.left = e.clientX - 100 + "px";
+        }
+oXbox.style.left=left+"px";
+aBox2.style.left=-left*2+"px";
+    oXbox.style.top=top+"px";
+    aBox2.style.top=-top*2+"px";
+
+
+
+</script>
+</body>
+</html>

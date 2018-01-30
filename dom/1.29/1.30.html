@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .box{
+            margin: 200px auto;
+            text-align: center;
+            width:400px;
+        }
+        .box div{
+            width: 400px;
+        }
+        .lose{
+            display:none;
+        }
+        .active{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="active" >1</div>
+    <div class="lose" style="display: none">
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </div>
+    <div class="active" >3</div>
+    <div class="lose" style="display: none" >
+        <ul>
+            <li>001</li>
+            <li>002</li>
+            <li>003</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var aActive = document.getElementsByClassName("active");
+    var alose = document.getElementsByClassName("lose");
+    var timer
+    for(var i=0;i<aActive.length;i++){
+        aActive[i].index=i;
+        aActive[i].onclick=function () {
+            if(alose[this.index].style.display == "none" ){
+                aActive[this.index].nextElementSibling.style.display="block";
+            }else {
+                aActive[this.index].nextElementSibling.style.display="none";
+            }
+        }
+    }
+
+
+
+
+//    function nexte(obj) {
+//    var aaa = obj
+//        do{
+//    aaa=aaa.nextSibling;
+
+//
+//        }while (aaa && aaa.nodeType!=1);
+//    return aaa
+//    }
+
+
+</script>
+</body>
+</html>

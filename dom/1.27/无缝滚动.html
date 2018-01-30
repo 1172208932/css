@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .clearfix:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    ul{
+        list-style-type: none;
+        width: 1100px;
+        position: relative;
+    }
+    ul li{
+        color: #ffffff;
+        float: left;
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 100px;
+        background-color: #000000;
+    }
+        .box{
+            width: 430px;
+            height: 100px;
+            margin: 100px auto;
+            border: 1px solid #dddddd;
+            padding: 10px 0;
+            position: relative;
+            overflow: hidden;
+        }
+    .btn-bar{
+        width: 200px;
+        text-align: center;
+        margin:0 auto;
+    }
+    .btn-bar button{
+        padding:20px;
+        font-size: 25px;
+    }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="clearfix" >
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</div>
+<div class="btn-bar">
+    <button id="next">向左</button>
+    <button id="prev">向右</button>
+</div>
+<script>
+    var aLi = document.getElementsByTagName("ul")[0];
+    var oNext =document.getElementById("next");
+    var oPrev=document.getElementById("prev");
+var timer
+    oNext.onclick=function () {
+        clearInterval(timer);
+        timer=setInterval(function () {
+            if(aLi.offsetLeft==-550){
+                aLi.style.left=-5+"px";
+           }else {
+               aLi.style.left=aLi.offsetLeft-1+"px";
+           }
+        },10)
+    }
+
+
+
+    oPrev.onclick=function () {
+    clearInterval(timer);
+        timer=setInterval(function () {
+            if(aLi.offsetLeft==5){
+                aLi.style.left=-550+"px";
+            }else {
+                aLi.style.left=aLi.offsetLeft+1+"px";
+            }
+
+        },10)
+        }
+</script>
+</body>
+</html>

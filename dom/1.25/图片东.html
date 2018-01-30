@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .clearfix:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .content{
+            height: 300px;
+            width: 100%;
+            margin:0 auto;
+        }
+
+        #imgg{
+
+            text-align: center;
+            width: 900px;
+            height: 300px;
+            background-color: #0086b3;
+            position: relative;
+        }
+        img{
+            width: 900px;
+            height: 300px;
+
+        }
+        .immg{
+            position: absolute;
+            display:none;
+        }
+        #numm{
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+
+        }
+        ul{
+            list-style-type: none;
+            padding:0;
+
+        }
+        ul li{
+            border-radius: 23px;
+            background-color: #df5000;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            float: right;
+
+        }
+        #leftt{
+            float: left;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+
+    </style>
+</head>
+<body >
+<div class="content clearfix">
+    <div  id="imgg">
+        <img src="../../xiaomiindex/images/zz779%20(2).png" alt="">
+        <img class="immg" src="../../xiaomiindex/images/zz779%20(2).png" alt="">
+        <img class="immg" src="../../xiaomiindex/images/zz1.jpg" alt="">
+        <img class="immg" src="../../xiaomiindex/images/zz779%20(1).png" alt="">
+        <img class="immg" src="../../xiaomiindex/images/zz123%20(1).png" alt="">
+        <img class="immg" src="../../xiaomiindex/images/zz123%20(2).png" alt="">
+        <ul id="numm">
+            <li class="lii">1</li>
+            <li class="lii">2</li>
+            <li class="lii">3</li>
+            <li class="lii">4</li>
+            <li class="lii">5</li>
+        </ul>
+        <ul id="leftt">
+            <li>&gt;</li>
+            <li>i</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    var aImg = document.getElementsByClassName("immg");
+    var aLi = document.getElementsByClassName("lii");
+    for( var i = 0;i<aLi.length;i++){
+        aLi[i].onmouseover=function () {
+            var thisSrc = aImg[i].getAttribute("src");
+
+            asd.setAttribute("src",thisSrc);
+        }
+        }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #333;
+        }
+        ul{
+            list-style-type: none;
+        }
+        .box{
+            width:492px;
+            height: 170px;
+            padding:10px;
+            margin: 30px auto;
+            border-radius: 10px;
+            background: #ffffff;
+            overflow: hidden;
+            position: relative;
+        }
+        .radiu-btn{
+            position: absolute;
+        }
+        .radiu-btn li{
+            height: 20px;
+            width: 20px;
+            background: #F90;
+            opacity: 0.7;
+            filter: alpha(opacity=70);
+            float: left;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            color: #ffffff;
+            margin-right:10px ;
+        }
+        .img-bar{
+            width: 3000px;
+            height:170px;
+            position: relative;
+
+        }
+        .img-bar ul{
+            position: relative;
+        }
+        .left-bt li{
+            line-height: 17px;
+        }
+        .left-bt{
+            left:10px;
+            bottom: 10px;
+        }
+        .right-btn{
+            right: 10px;
+            bottom: 10px;
+        }
+        .radiu-btn .active{
+            background-color: #f60;
+        }
+        img{
+            height: 190px;
+            width: 492px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="img-bar">
+        <ul id="imga">
+            <li><img src="../../img/01.jpg" alt=""></li>
+            <li><img src="../../img/02.jpg" alt=""></li>
+            <li><img src="../../img/03.jpg" alt=""></li>
+            <li><img src="../../img/04.jpg" alt=""></li>
+            <li><img src="../../img/05.jpg" alt=""></li>
+            <li><img src="../../img/01.jpg" alt=""></li>
+
+        </ul>
+    </div>
+    <div>
+        <ul class="radiu-btn left-bt">
+            <li this-type="prev">&lt;</li>
+            <li this-type="next">&gt;</li>
+        </ul>
+    </div>
+    <div>
+        <ul class="radiu-btn right-btn">
+            <li >1</li>
+            <li >2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var aBox = document.getElementsByClassName("box")[0];
+    var aImgb =document.getElementById("imga").getElementsByTagName("li");
+    var oImga = document.getElementById("imga");
+    var aLeft = document.getElementsByTagName("ul")[1].getElementsByTagName("li");
+    var aRighr = document.getElementsByTagName("ul")[2].getElementsByTagName("li");
+    var oOne =document.getElementById("one");
+    var oTwo =document.getElementById("two");
+    var globalindex = 0;
+    var dirction = 10;
+    var istimer =true;
+    var aretimer=true;
+
+    function changeImg(index) {
+        aretimer=false;
+        if(index>globalindex){
+            dirction=10;
+        }else {
+            dirction=-10;
+        }
+        globalindex=index;
+        if(index==-1){
+            oImga.style.left=oImga.offsetLeft-490+"px";
+        }
+        if (index==5){
+            globalindex=0
+        }
+
+
+        for(var j=0;j<aRighr.length;j++){
+            aRighr[j].className="";
+        }
+        aRighr[index].className="active";
+        var timer =setInterval(function () {
+            if (oImga.offsetLeft==-index*490){
+              clearInterval(timer);
+                globalindex=index;
+                if(index==5){
+                    oImga.style.left=0;
+                    globalindex=0;
+                }
+            }else {
+                oImga.style.left=oImga.offsetLeft-dirction+"px";
+            }
+        },10);
+    }
+
+    for(i=0;i<aRighr.length;i++){
+        aRighr[i].index=i;
+        aRighr[i].onmouseover=function () {
+            changeImg(this.index);
+
+        }
+    }
+
+
+    aLeft[0].onclick=function () {
+        changeImg(globalindex-1);
+    };
+    aLeft[1].onclick=function () {
+        changeImg(globalindex+1);
+    };
+
+
+    setInterval(function () {
+        if(aretimer){
+            changeImg(globalindex+1)
+        }
+    },1000);
+    aBox.onmouseover=function () {
+        istimer=false
+    };
+    aBox.onmouseout=function () {
+         istimer=true
+    };
+
+
+
+//    oOne.onmouseover=function () {
+//        timer=setInterval(function () {
+//            if(oImga.offsetLeft==0){
+//                clearInterval(timer);
+//            }else {
+//                oImga.style.left=oImga.offsetLeft+5+"px"
+//            }
+//
+//        },1)
+//    }
+//    oTwo.onmouseover=function () {
+//        timer=setInterval(function () {
+//
+//            if (oImga.offsetLeft==-500){
+//                clearInterval(timer);
+//            }else {
+//                oImga.style.left=oImga.offsetLeft-5+"px"
+//            }
+//
+//        },1)
+//    }
+</script>
+</body>
+</html>

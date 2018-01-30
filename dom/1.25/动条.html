@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: #df5000;
+            height: 100px;
+            width: 400px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+</div>
+<div id="box2"></div>
+<div id="box3"></div>
+<script>
+    var oDiv  = document.getElementById("box");
+    var oDiv2  = document.getElementById("box2");
+    var oDiv3  = document.getElementById("box3");
+
+    var timrt;
+    oDiv.onmouseover=function () {
+            clearInterval(timrt);
+        timrt=setInterval(function () {
+            if(oDiv.offsetWidth == 1000){
+                clearInterval(timrt);
+            }else {
+                oDiv.style.width=oDiv.offsetWidth+60+"px";// 获取宽度
+            }
+        },10)
+    }
+    oDiv.onmouseout=function () {
+        clearInterval(timrt);
+        timrt=setInterval(function () {
+            if (oDiv.offsetWidth ==400){
+                clearInterval(timrt);
+            }else {
+                oDiv.style.width=oDiv.offsetWidth-60+"px";// 获取宽度
+            }
+        },10)
+    }
+
+    var timrt2;
+    oDiv2.onmouseover=function () {
+        clearInterval(timrt2);
+        timrt2=setInterval(function () {
+            if(oDiv2.offsetWidth == 1000){
+                clearInterval(timrt2);
+            }else {
+                oDiv2.style.width=oDiv2.offsetWidth+60+"px";// 获取宽度
+            }
+        },10)
+    }
+    oDiv2.onmouseout=function () {
+        clearInterval(timrt2);
+        timrt2=setInterval(function () {
+            if (oDiv2.offsetWidth ==400){
+                clearInterval(timrt2);
+            }else {
+                oDiv2.style.width=oDiv2.offsetWidth-60+"px";// 获取宽度
+            }
+        },10)
+    }
+
+
+    var timrt3;
+    oDiv3.onmouseover=function () {
+        clearInterval(timrt3);
+        timrt3=setInterval(function () {
+            if(oDiv3.offsetWidth == 1000){
+                clearInterval(timrt3);
+            }else {
+                oDiv3.style.width=oDiv3.offsetWidth+60+"px";// 获取宽度
+            }
+        },10)
+    }
+    oDiv3.onmouseout=function () {
+        clearInterval(timrt3);
+        timrt3=setInterval(function () {
+            if (oDiv3.offsetWidth ==400){
+                clearInterval(timrt3);
+            }else {
+                oDiv3.style.width=oDiv3.offsetWidth-60+"px";// 获取宽度
+            }
+        },10)
+    }
+
+
+</script>
+</body>
+</html>
