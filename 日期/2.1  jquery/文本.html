@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+<input type="text" id="val" >
+<button id="btn"></button>
+<div id="aa">
+    <p>1q</p>
+    <p>2q</p>
+    <p>3q</p>
+    <p>4q</p>
+    <p>5q</p>
+    <p>6q</p>
+</div>
+<script>
+    $("#btn").click(function () {
+       var aa= $("#val").val();
+        $("p:contains("+aa+")").css("color","red")
+    })
+</script>
+</body>
+</html>

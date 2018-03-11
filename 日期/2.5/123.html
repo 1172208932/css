@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width: 200px;
+            height: 300px;
+        }
+        .s div{
+            float: left;
+        }
+
+    </style>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="s">
+    <div id="bo">
+        <select multiple="multiple"  name="" id="left">
+            <option value="volvo">选项1</option>
+            <option value="volvo">选项2</option>
+            <option value="volvo">选项3</option>
+            <option value="volvo">选项4</option>
+            <option value="volvo">选项5</option>
+            <option value="volvo">选项6</option>
+            <option value="volvo">选项7</option>
+        </select><br>
+        <button id="le">选中添加到右边</button>
+        <br>
+        <button id="lef">全部添加到右边</button>
+    </div>
+    <div id="bo2">
+        <select multiple="multiple"  name="" id="right">
+            <option value="volvo">选项8</option>
+        </select><br>
+        <button id="ri">选中添加到左边</button>
+        <br>
+        <button id="rig">全部添加到左边</button>
+    </div>
+
+
+</div>
+<script>
+
+    $("#bo").on("dblclick","option",function(){
+            $(this).appendTo($("#right"))
+    });
+    $("#bo2").on("dblclick","option",function(){
+        $(this).appendTo($("#left"))
+    });
+
+    $("#le").click(function () {
+        $("#left option:selected").appendTo($("#right"));
+    })
+    $("#ri").click(function () {
+        $("#right option:selected").appendTo($("#left"));
+    })
+
+    $("#lef").click(function () {
+        $("#left option").appendTo($("#right"));
+    })
+    $("#rig").click(function () {
+        $("#right option").appendTo($("#left"));
+    })
+
+</script>
+</body>
+</html>

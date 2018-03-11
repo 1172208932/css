@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div>你爱好的运动是？</div>
+<div id="zpl">
+    <input type="checkbox">足球
+    <input type="checkbox">排球
+    <input type="checkbox">篮球
+    <input type="checkbox">羽毛球
+</div>
+<div >
+    <button id="tib1">全选</button><button id="tib2">全不选</button><button id="tib3">反选</button>
+</div>
+
+<script>
+    var $zpl = $("#zpl>input");
+
+$("#tib1").click(function () {
+    $("#zpl>input").prop("checked",true);
+});
+$("#tib2").click(function () {
+    $("#zpl>input").prop("checked",false);
+});
+
+
+
+
+    $("#tib3").click(function () {
+        $("#zpl>input").each(function (index,elem) {
+            if($(elem).prop("checked")){
+                $(elem).prop("checked",true)
+            }else {
+                $(elem).prop("checked",false)
+            }
+        })
+
+    });
+
+
+
+//    $("#tib3").click.each(function (index,elem) {
+//        if($("#zpl>input").prop("checked")){
+//            $("#zpl>input").prop("checked",false)
+//        }else {
+//            $("#zpl>input").prop("checked",true)
+//        }
+//
+//    })
+
+//    $("#tib3").click(function () {
+//        var k =0;
+//        for (var i=0;i<$zpl.length;i++){
+//            if($zpl.eq(i).prop("checked")){
+//                $zpl.eq(i).prop("checked",false);
+//            }else {
+//                $zpl.eq(i).prop("checked",true);
+//            }
+//                }
+//    });
+
+
+//    var b = $("#aa").get(0);
+
+</script>
+</body>
+</html>

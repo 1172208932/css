@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 1px dashed #000000;
+            perspective: 1000px;
+        }
+        .box div{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .div1{
+            width: 200px;
+            height: 200px;
+            background: #df5000;
+            /*transform-style:preserve-3d ;*/
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background: #00aaee;
+            /*transform-style:preserve-3d ;*/
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1"><div class="div2"></div></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<div>
+    <button id="bg">放大</button>
+    <button id="sm">缩小</button>
+</div>
+<textarea id="user"  cols="30" rows="10">大家发链接发来大家发了我就多撒后发觉垃圾家乐福的凯萨琳积分发到拉萨机肌肤抵抗垃圾</textarea>
+</body>
+<script>
+    $("#bg").click(function () {
+        $("#user").animate({
+            height:500
+        },1000)
+    })
+    $("#sm").click(function () {
+        $("#user").animate({
+            height:100
+        },1000)
+    })
+</script>
+</html>

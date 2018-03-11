@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            background-color: black;
+        }
+        ul{
+list-style-type: none;
+        }
+        .clearfix:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .center{
+            width: 1226px;
+            text-align: center;
+             margin: 0 auto;
+        }
+        .top{
+            font-size: large;
+            width: 100%;
+            height: 100px;
+            color: white;
+        }
+        .sit{
+            width: 420px;
+            margin: 0 auto;
+        }
+        .red{
+             background-color: red !important;
+         }
+
+        .sit ul li {
+            width: 30px;
+            height: 25px;
+            background-color: white;
+            margin-left: 5px;
+            margin-top: 20px;
+            float: left;
+        }
+        .blue{
+            background-color: #0086b3;
+        }
+
+    </style>
+</head>
+<body>
+<div class="center">
+    <div class="top">
+        <h>电影选座</h>
+    </div>
+
+    <div class="sit clearfix">
+        <ul >
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li ></li>
+            <li class="box"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <br>
+        <ul >
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li ></li>
+            <li class="box"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <br>
+        <ul >
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li ></li>
+            <li class="box"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <br>
+        <ul >
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li ></li>
+            <li class="box"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+    </div>
+    <div class="site"></div>
+    <div class="que"></div>
+</div>
+<script>
+
+    $(".box").css("margin-left","60px");
+//    for(var i=0 ;i<39;i++){
+//        $(".sit ul li").eq(i).addClass("a"+i);
+//    }
+//
+//var oo =new Array;
+//    for(var j=0 ;j<20;j++){
+//        oo[j]= Math.floor(Math.random()*40+1);
+//    }
+//    $(".sit ul li::content('oo')").addClass("blue");
+
+
+
+    $(".sit ul li").click(function () {
+        $(this).toggleClass("red");
+    })
+
+
+
+
+
+
+
+
+
+//    $("sit li").addClass("blue")
+</script>
+
+</body>
+</html>

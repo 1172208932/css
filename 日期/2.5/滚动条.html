@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+    <style>
+        #k{
+            width: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<div><button id="up">向上</button><button id="down">向下</button></div>
+<div id="k">
+    <div id="text">的撒范德萨发大水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨萨发大水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨范德萨幅度萨芬范德萨范德萨范德撒范德萨发大水范德萨范德萨幅度萨芬范德萨范德萨范德萨</div>
+</div>
+<script>
+    $("#up").click(function () {
+        $("#k").animate({
+            scrollTop:"-=50"
+        },1000)
+    })
+    $("#down").click(function () {
+        $("#k").animate({
+            scrollTop:"+=50"
+        },1000)
+    })
+</script>
+
+</body>
+</html>

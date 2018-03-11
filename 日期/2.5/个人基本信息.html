@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            background-color: red;
+        }
+
+    </style>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+</head>
+<body>
+<form action="" method="post" id="regForm">
+    <fieldset>
+        <legend>个人基本信息</legend>
+        <div>
+            <label for="username">名称</label>
+            <input id="username" type="text" value="名称">
+        </div>
+        <div>
+            <label for="username1">名称</label>
+            <input id="username1" value="密码" type="text">
+        </div>
+        <div>
+            <label for="username2">详细信息</label>
+            <textarea name="username2" id="username2"  cols="30" rows="10">详细信息</textarea>
+        </div>
+    </fieldset>
+</form>
+<script>
+
+    $("#username").add("#username1").add("#username2").focus(function () {
+       if(){}
+    }).blur(function () {
+        $(this).removeClass("active");
+        $(this).attr("value",defaulvalue).val(defaulvalue);
+    })
+
+
+
+</script>
+</body>
+</html>
