@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简易选项卡</title>
+    <script src="../../js/jquery/jquery-3.3.1.js"></script>
+    <style>
+        body,ul,li{margin:0;padding:0;}
+        body{font:12px/1.5 Tahoma;}
+        #outer{width:450px;margin:10px auto;}
+        #tab{overflow:hidden;zoom:1;background:#000;border:1px solid #000;}
+        #tab li{float:left;color:#fff;height:30px;cursor:pointer;line-height:30px;list-style-type:none;padding:0 20px;}
+        #tab li.active{color:#000;background:#ccc;}
+        #content{border:1px solid #000;border-top-width:0;}
+        #content ul{line-height:25px;display:none;margin:0 30px;padding:10px 0;}
+    </style>
+
+</head>
+<body>
+<div id="outer">
+    <ul id="tab">
+        <li class="active">第一课</li>
+        <li class="">第二课</li>
+        <li class="">第三课</li>
+    </ul>
+    <div id="content">
+        <ul id="text1" style="display: block">
+            <li>网页特效原理分析</li>
+            <li>网页特效原理分析</li>
+            <li>网页特效原理分析</li>
+            <li>网页特效原理分析</li>
+            <li>第一页</li>
+        </ul>
+        <ul id="text2">
+            <li>第二页</li>
+            <li>改变网页背景颜色</li>
+        </ul>
+        <ul id="text3">
+            <li>第三页</li>
+            <li>JavaScript组成：ECMAScript、DOM、BOM，JavaScript兼容性来源</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    //    var oLi = document.getElementById("tab").getElementsByTagName("li");
+    //    var oUl = document.getElementById("content").getElementsByTagName("ul");
+    //      var oTab = document.getElementById("tab");
+    //      var aTabLi = oTab.getElementsByTagName("li");
+    //      var aUl = document.getElementById("content").getElementsByTagName("ul");
+    //
+    //      for(var i = 0;i<aTabLi.length;i++){
+    //          aTabLi[i].index = i;
+    //          aTabLi[i].onmouseover = function () {
+    //              for(var j=0;j<aTabLi.length;j++){
+    //                  aTabLi[j].className ="";
+    //                  aUl[j].style.display="none";
+    //              }
+    //              aUl[this.index].style.display="block";
+    //              this.className="active";
+    //          }
+    //      }
+    //      a = [6,7,9]
+    //  a[]
+    $("#tab>li").click(function () {
+        $("#tab>li").removeClass("active");
+        $("#content>ul").css("display","none");
+        $(this).addClass("active");
+        $("#content>ul").eq($(this.index())).css("display","block");
+    })
+
+
+</script>
+</body>
+</html>

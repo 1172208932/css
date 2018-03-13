@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <p>文本1</p>
+    <p>文本2</p>
+    <p>文本3</p>
+    <p>文本4</p>
+    <p>文本5</p>
+</div>
+<script>
+    var ap=document.getElementsByTagName("p");
+    for(var i =0 ; i<ap.length;i++){
+        ap[i].onclick = function () {
+
+                ap[].classList.remove("active");
+
+            this.classList.add("active");
+
+
+        }
+    }
+//    ap[0].onclick=function () {
+//        ap.className="active"
+//
+//    }
+
+</script>
+</body>
+</html>

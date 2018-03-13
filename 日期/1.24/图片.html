@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            text-align: center;
+        }
+        .awe {
+            text-align: center;
+            width: 400px;
+            height: 400px;
+            border: solid #0086b3;
+        }
+        .bbb img {
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            border: solid #0086b3;
+        }
+    </style>
+</head>
+<body>
+<div class="awe">
+    <img id="aaa"  alt="">
+</div>
+<div class="bbb">
+    <img src="../../xiaomiindex/images/zz123%20(1).png" alt="">
+    <img src="../../xiaomiindex/images/zz123%20(2).png" alt="">
+    <img src="../../xiaomiindex/images/zz779%20(1).png" alt="">
+    <img src="../../xiaomiindex/images/zz779%20(2).png" alt="">
+    <ul id="numm">
+        <li class="lii">1</li>
+        <li class="lii">2</li>
+        <li class="lii">3</li>
+        <li class="lii">4</li>
+        <li class="lii">5</li>
+    </ul>
+</div>
+<script>
+    var  asd = document.getElementById("aaa");
+    var sdf = document.getElementsByTagName("img");
+    for( var i = 0;i<sdf.length;i++){
+        sdf[i].onmouseover=function () {
+            var thisSrc = this.getAttribute("src");
+
+            asd.setAttribute("src",thisSrc);
+
+    }
+
+
+
+    }
+
+</script>
+</body>
+</html>

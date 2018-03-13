@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            border: 1px solid #ddd;
+            position: absolute;
+            text-align: center;
+        }
+        ul li{
+            border-bottom: 1px solid #ddd;
+            float: right;
+        }
+        div{
+            background-color:red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<ul id="tt">
+    <li><input id="t1" type="button" value="加宽"></li>
+    <li><input id="t2" type="button" value="变高"></li>
+    <li><input id="t3" type="button" value="变色"></li>
+    <li><input id="t4" type="button" value="重置"></li>
+</ul>
+<div id="rr">
+
+</div>
+<script>
+    var aTT=document.getElementsByTagName()
+    var oT1= document.getElementById("t1");
+    var oT2= document.getElementById("t2");
+    var oT3= document.getElementById("t3");
+    var oT4= document.getElementById("t4");
+    var oRr= document.getElementById("rr");
+    var arr1= ["width" ,"height","background-color","display"];
+    var arr2 =["400px","400px","#ddd","none"];
+    for(var i=0;i<4;i++){
+
+    }
+
+    oT1.onclick=function () {
+        oRr.style.width="400px"
+    }
+    oT2.onclick=function () {
+        oRr.style.height="400px"
+    }
+    oT3.onclick=function () {
+        oRr.style.backgroundColor="blue"
+    }
+    oT4.onclick=function () {
+        oRr.style.cssText = "";
+    }
+
+</script>
+</body>
+</html>

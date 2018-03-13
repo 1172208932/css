@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            border: 1px solid #ddd;
+            width: 150px;
+            display: none;
+            position: absolute;
+            text-align: center;
+        }
+        ul li{
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+<ul class="wawa">
+    <li class="vv">百度</li>
+    <li class="vv">新浪</li>
+    <li class="vv">小米</li>
+    <li class="vv">优酷</li>
+</ul>
+<script>
+    var aUl =document.getElementsByClassName("wawa");
+//    var aLi = document.getElementsByTagName("li");
+    document.oncontextmenu = function (e) {
+        aUl[0].style.display="block";
+        aUl[0].style.top=e.clientY+"px";
+        aUl[0].style.right=e.clientX+"px";
+        return false;
+    }
+
+
+</script>
+</body>
+</html>

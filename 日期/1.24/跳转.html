@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<p><input type="text" placeholder="输入网址"></p>
+<p><button id="btn">跳转</button></p>
+<p>输入网址</p>
+<script>
+    var aInput=document.getElementsByTagName("input");
+    var oBtn = document.getElementById("btn");
+    oBtn.onclick=function () {
+        var val = aInput[0].value;
+        location.href="http://"+val;
+    }
+    aInput[0].onkeydown=function (e) {
+        var val = aInput[0].value;
+        var keycod = e.keyCode;
+        if (keycod==13){
+            location.href="http://"+val;
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
