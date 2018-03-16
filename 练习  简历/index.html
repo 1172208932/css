@@ -7,6 +7,35 @@
         ul{
             list-style-type: none;
         }
+        @keyframes ani {
+            from{
+                top:50%;
+            }
+            to{
+                top:10%;
+            }
+        }
+        @keyframes ani2{
+            from{
+                opacity: 1;
+            }to{
+            opacity: 0;
+                         }
+        }
+        .loading-info{
+            opacity: 1;
+            animation: ani2 1s linear forwards;
+        }
+        .loading{
+            position: absolute;
+            top:50%;
+            left: 47%;
+            animation: ani 1s linear forwards;
+        }
+        .loading-avatar img{
+            border-radius: 50px;
+        }
+
 
         .head-text{
             font-size: 30px;
@@ -28,16 +57,16 @@
     <div class="loading-info">正在努力加载中...</div>
 
 </div>
-<!--<div>-->
-    <!--<div class="header">-->
-        <!--<ul>-->
-            <!--<li class="head-text">关于</li>-->
-            <!--<li class="head-text">作品</li>-->
-            <!--<li class="min-photo"><a href="images/avatar.jpg" ></a></li>-->
-            <!--<li class="head-text">能力</li>-->
-            <!--<li class="head-text">联系</li>-->
-        <!--</ul>-->
-    <!--</div>-->
-<!--</div>-->
+<div>
+    <div class="header">
+        <ul>
+            <a href=""><li class="head-text">关于</li></a>
+            <li class="head-text">作品</li>
+            <li class="min-photo"><a href="images/avatar.jpg" ></a></li>
+            <li class="head-text">能力</li>
+            <li class="head-text">联系</li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

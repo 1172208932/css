@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            background: #ff6600;
+        }
+    </style>
+</head>
+<body>
+<canvas width="400" height="400" id="box"></canvas>
+<script>
+    var oBox = document.querySelector("#box");
+    var context = oBox.getContext("2d");
+    context.beginPath();
+    context.moveTo(10,10);
+    context.lineTo(100,100);
+    context.lineWidth=10;
+    context.strokeStyle="#ffffff";
+    context.stroke();
+
+    context.beginPath();
+    context.arc(100,100,50,startAngle)
+</script>
+</body>
+</html>
