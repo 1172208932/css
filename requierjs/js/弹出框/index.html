@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .dialog-box{
+            position: fixed;
+            top:0;
+            left:0;
+            height: 100%;
+            width: 100%;
+        }
+        .dialog-mask{
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0,0,0,.5);
+        }
+        .dialog-container{
+            height: 300px;
+            width: 400px;
+            background-color: #ff6600;
+        }
+        .dialog-container{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            /*margin-top: -150px;*/
+            /*margin-left: -200px;*/
+        }
+        .header{
+            height: 30px;
+            background-color: #00aaee;
+            color: #a71d5d;
+            padding:0 5px;
+        }
+        .header div{
+            line-height: 33px;
+        }
+        .dialog-title{
+            float: left;
+        }
+        .dialog-btn{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">
+   打开弹框
+</button>
+<!--<div class="dialog-box">-->
+    <!--<div class="dialog-mask"></div>-->
+    <!--<div class="dialog-container">-->
+        <!--<div class="header">-->
+            <!--<div class="dialog-title">注册</div>-->
+            <!--<div class="dialog-btn">[x]</div>-->
+        <!--</div>-->
+        <!--<div class="dialog-content"></div>-->
+    <!--</div>-->
+<!--</div>-->
+<script src="jquery/require.js" data-main="index"></script>
+
+
+</body>
+</html>

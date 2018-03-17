@@ -22,11 +22,11 @@
             </div>
             <div class="login-content">
                 <div class="login-input">
-                    <input type="text" placeholder="邮箱/手机号/小米ID">
-                    <input type="text" placeholder="密码">
+                    <input id="acunt" type="text" placeholder="邮箱/手机号/小米ID">
+                    <input id="mi" type="text" placeholder="密码">
                 </div>
                 <div class="login-btn">
-                    <input type="submit" value="登录">
+                    <input id="sub" type="submit" value="登录">
                 </div>
                 <div class="small-text clearfix">
                     <div class="st-left">
@@ -61,5 +61,22 @@
         </div>
     </div>
 </div>
+<script>
+    var oAcunt = document.getElementById("acunt");
+    var oMi = document.getElementById("mi");
+    var oSub = document.getElementById("sub");
+
+    localStorage.account=("1");
+    localStorage.mima=("1");
+
+    oSub.onclick=function () {
+        if(oAcunt.value==localStorage.account,oMi.value==localStorage.mima){
+            alert("OMG");
+        }
+    };
+
+
+
+</script>
 </body>
 </html>

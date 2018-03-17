@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var timer = new Date();
+    timer.setDate(timer.getDate()+10);
+    console.log("expires"+timer);
+document.cookie = "name=小明;expires="+timer.toUTCString();
+    document.cookie = "age=18;expires="+timer.toUTCString();
+    function getCookie(key) {
+        var arr = document.cookie.split("; ");
+        for(var i=0 ; i<arr.length;i++){
+            if (arr[i].split("=")[0].trim()==key){
+                return arr[i].split("=")[1];
+            }
+        }
+
+        console.log(age);
+    }
+    function setcookie(key,value,expires) {
+        var timer = new Date();
+        timer.setDate(timer.getDate()+expires);
+        document.cookie = key+"="+value+";expires="+timer.toUTCString();
+    }
+
+    getCookie();
+</script>
+</body>
+</html>
