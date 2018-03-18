@@ -2,203 +2,245 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>自动播放——幻灯片效果</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        body{
-            background: #333;
-        }
-        ul{
-            list-style-type: none;
-        }
-        .box{
-            width:492px;
-            height: 170px;
-            padding:10px;
-            margin: 30px auto;
-            border-radius: 10px;
-            background: #ffffff;
-            overflow: hidden;
-            position: relative;
-        }
-        .radiu-btn{
-            position: absolute;
-        }
-        .radiu-btn li{
-            height: 20px;
-            width: 20px;
-            background: #F90;
-            opacity: 0.7;
-            filter: alpha(opacity=70);
-            float: left;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 20px;
-            font-size: 14px;
-            color: #ffffff;
-            margin-right:10px ;
-        }
-        .img-bar{
-            width: 3000px;
-            height:170px;
-            position: relative;
-
-        }
-        .img-bar ul{
-            position: relative;
-        }
-        .left-bt li{
-            line-height: 17px;
-        }
-        .left-bt{
-            left:10px;
-            bottom: 10px;
-        }
-        .right-btn{
-            right: 10px;
-            bottom: 10px;
-        }
-        .radiu-btn .active{
-            background-color: #f60;
-        }
-        img{
-            height: 190px;
-            width: 492px;
-            float: left;
-        }
+        body,div,ul,li{margin:0;padding:0;}
+        ul{list-style-type:none;}
+        body{background:#000;text-align:center;font:12px/20px Arial;}
+        #box{position:relative;width:490px;height:172px;background:#fff;border-radius:5px;border:8px solid #fff;margin:10px auto;overflow: hidden}
+        #box .list{position:absolute;width:2450px;height:170px;overflow:hidden;}
+        #box .list li{width:490px;height:170px;float: left;}
+        #box .count{position:absolute;right:0;bottom:5px;}
+        #box .count li{color:#fff;float:left;width:20px;height:20px;cursor:pointer;margin-right:5px;overflow:hidden;background:#F90;opacity:0.7;filter:alpha(opacity=70);border-radius:20px;}
+        #box .count li.active{color:#fff;opacity:1;filter:alpha(opacity=100);font-weight:700;background:#f60;}
+        .arr-btn{position: absolute;left:10px;bottom: 5px;width: 60px}
+        .arr-btn li{}
     </style>
+
 </head>
 <body>
-<div class="box">
-    <div class="img-bar">
-        <ul id="imga">
-            <li><img src="../../img/01.jpg" alt=""></li>
-            <li><img src="../../img/02.jpg" alt=""></li>
-            <li><img src="../../img/03.jpg" alt=""></li>
-            <li><img src="../../img/04.jpg" alt=""></li>
-            <li><img src="../../img/05.jpg" alt=""></li>
-            <li><img src="../../img/01.jpg" alt=""></li>
+<div id="box1"><div id="box">
+    <ul class="list" id="silder-list">
+        <li class="active"><img src="../../img/06.jpg" width="490" height="170"></li>
+        <li><img src="../../img/03.jpg" width="490" height="170"></li>
+        <li><img src="../../img/01.jpg" width="490" height="170"></li>
+        <li><img src="../../img/07.jpg" width="490" height="170"></li>
+        <li><img src="../../img/05.jpg" width="490" height="170"></li>
+        <li><img src="../../img/06.jpg" width="490" height="170"></li>
+    </ul>
+    <ul class="count">
+        <li class="active">1</li>
+        <li class="">2</li>
+        <li class="">3</li>
+        <li class="">4</li>
+        <li class="">5</li>
+    </ul>
+    <ul class="arr-btn count">
+        <li this-type="prev">&lt;</li>
+        <li this-type="next">&gt;</li>
+    </ul>
+</div></div>
+<div id="box2"><div id="box">
+    <ul class="list" id="silder-list">
+        <li class="active"><img src="../../img/06.jpg" width="490" height="170"></li>
+        <li><img src="../../img/03.jpg" width="490" height="170"></li>
+        <li><img src="../../img/01.jpg" width="490" height="170"></li>
+        <li><img src="../../img/07.jpg" width="490" height="170"></li>
+        <li><img src="../../img/05.jpg" width="490" height="170"></li>
+        <li><img src="../../img/06.jpg" width="490" height="170"></li>
+    </ul>
+    <ul class="count">
+        <li class="active">1</li>
+        <li class="">2</li>
+        <li class="">3</li>
+        <li class="">4</li>
+        <li class="">5</li>
+    </ul>
+    <ul class="arr-btn count">
+        <li this-type="prev">&lt;</li>
+        <li this-type="next">&gt;</li>
+    </ul>
+</div></div>
 
-        </ul>
-    </div>
-    <div>
-        <ul class="radiu-btn left-bt">
-            <li this-type="prev">&lt;</li>
-            <li this-type="next">&gt;</li>
-        </ul>
-    </div>
-    <div>
-        <ul class="radiu-btn right-btn">
-            <li >1</li>
-            <li >2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-        </ul>
-    </div>
-</div>
-<script>
-    var aBox = document.getElementsByClassName("box")[0];
-    var aImgb =document.getElementById("imga").getElementsByTagName("li");
-    var oImga = document.getElementById("imga");
-    var aLeft = document.getElementsByTagName("ul")[1].getElementsByTagName("li");
-    var aRighr = document.getElementsByTagName("ul")[2].getElementsByTagName("li");
-    var oOne =document.getElementById("one");
-    var oTwo =document.getElementById("two");
-    var globalindex = 0;
+<script type="text/javascript">
+    var oBox = document.getElementById("box");
+    var aLi = document.getElementsByClassName("count")[0].getElementsByTagName("li");
+    var oImg = document.getElementsByClassName("list")[0];
+    var aBtn = document.getElementsByClassName("count")[1].getElementsByTagName("li");
+    var globalIndex = 0;
     var dirction = 10;
-    var istimer =true;
-    var aretimer=true;
+    var isRun = true;
+    var isTimer = true;
+
+    oImg.style.width = oImg.offsetWidth + 490 +"px";
 
     function changeImg(index) {
-        aretimer=false;
-        if(index>globalindex){
-            dirction=10;
-        }else {
-            dirction=-10;
+        isRun = false;
+        if(index>globalIndex){
+            dirction = 10;
+        }else{
+            dirction = -10;
         }
-        globalindex=index;
-        if(index==-1){
-            oImga.style.left=oImga.offsetLeft-490+"px";
+        globalIndex = index;
+        if(index == -1){
+            oImg.style.left = -(oImg.offsetWidth -490)+"px";
+            globalIndex = 4;
+            index = 4;
         }
-        if (index==5){
-            globalindex=0
+        if(index == 5){
+            globalIndex = 0;
         }
-
-
-        for(var j=0;j<aRighr.length;j++){
-            aRighr[j].className="";
+        for(var j=0;j<aLi.length;j++){
+            aLi[j].className="";
         }
-        aRighr[index].className="active";
-        var timer =setInterval(function () {
-            if (oImga.offsetLeft==-index*490){
-              clearInterval(timer);
-                globalindex=index;
+        aLi[globalIndex].className = "active";
+        var timer = setInterval(function () {
+            console.log(oImg.offsetLeft+"+"+-index*490);
+            if(oImg.offsetLeft==-index*490){
+                clearInterval(timer);
+                isRun = true;
+                globalIndex = index;
                 if(index==5){
-                    oImga.style.left=0;
-                    globalindex=0;
+                    oImg.style.left = 0;
+                    globalIndex = 0
                 }
-            }else {
-                oImga.style.left=oImga.offsetLeft-dirction+"px";
+            }else{
+                oImg.style.left = oImg.offsetLeft - dirction+"px";
             }
         },10);
     }
 
-    for(i=0;i<aRighr.length;i++){
-        aRighr[i].index=i;
-        aRighr[i].onmouseover=function () {
-            changeImg(this.index);
 
+    for (var i=0;i<aLi.length;i++){
+        aLi[i].index = i;
+        aLi[i].onmouseover=function () {
+            if(isRun){
+                changeImg(this.index);
+            }
         }
     }
 
 
-    aLeft[0].onclick=function () {
-        changeImg(globalindex-1);
+    aBtn[0].onclick = function () {
+        if(isRun){
+            changeImg(globalIndex-1);
+        }
     };
-    aLeft[1].onclick=function () {
-        changeImg(globalindex+1);
+    aBtn[1].onclick = function () {
+        if(isRun){
+            changeImg(globalIndex+1);
+        }
     };
-
 
     setInterval(function () {
-        if(aretimer){
-            changeImg(globalindex+1)
+        if(isRun && isTimer){
+            changeImg(globalIndex+1);
         }
     },1000);
-    aBox.onmouseover=function () {
-        istimer=false
-    };
-    aBox.onmouseout=function () {
-         istimer=true
-    };
+
+    oBox.onmouseover= function () {
+        isTimer = false;
+    }
+    oBox.onmouseout = function () {
+        isTimer = true;
+    }
 
 
 
-//    oOne.onmouseover=function () {
-//        timer=setInterval(function () {
-//            if(oImga.offsetLeft==0){
-//                clearInterval(timer);
-//            }else {
-//                oImga.style.left=oImga.offsetLeft+5+"px"
-//            }
-//
-//        },1)
-//    }
-//    oTwo.onmouseover=function () {
-//        timer=setInterval(function () {
-//
-//            if (oImga.offsetLeft==-500){
-//                clearInterval(timer);
-//            }else {
-//                oImga.style.left=oImga.offsetLeft-5+"px"
-//            }
-//
-//        },1)
-//    }
+
+
+
+
+
+
+
+
+    //  var oBox = document.getElementById("box");
+    //  var aUl = document.getElementsByTagName("ul");
+    //  var aNum = aUl[1].getElementsByTagName("li");
+    //  var aBtn = aUl[2].getElementsByTagName("li");
+    //  var oList = document.getElementById("silder-list")
+    //  var globalIndex=0;
+    //  var dirction = -10;
+    //  var timer;
+    //  var isChange = true;
+    //  var isChange2 = true;
+    //  oList.innerHTML+=oList.innerHTML;
+    //  oList.style.width=oList.offsetWidth*2+"px";
+    //
+    //  setInterval(function () {
+    //      if(isChange && isChange2){
+    //          changeImg(++globalIndex);
+    //          dirction = -10;
+    //      }
+    //  },2000);
+    //
+    //  oBox.onmouseover=function () {
+    //      isChange = false;
+    //  };
+    //
+    //  oBox.onmouseout = function () {
+    //      isChange = true;
+    //  };
+    //
+    //  for(var j = 0;j<aNum.length ;j++){
+    //      aNum[j].index = j;
+    //      aNum[j].onclick = function () {
+    //          if(isChange2){
+    //              var thisGolbal = globalIndex;
+    //              globalIndex = this.index;
+    //              changeImg(this.index);
+    //              this.index>thisGolbal ? dirction = -10:dirction = 10;
+    //          }
+    //      }
+    //  }
+    //
+    //  function changeImg(index) {
+    //
+    //      if(index == -1){
+    //          oList.style.left = -oList.offsetWidth/2+"px";
+    //          globalIndex = index = 4;
+    //      }
+    //      if(index == 5){
+    //          globalIndex = 0
+    //      }
+    //
+    //      for(var j=0;j<aNum.length;j++){
+    //          aNum[j].className="";
+    //      }
+    //      aNum[globalIndex].className="active";
+    //
+    //      timer = setInterval(function () {
+    //          isChange2=false;
+    //          if(oList.offsetLeft!=-index*490){
+    //              oList.style.left = oList.offsetLeft+dirction+"px";
+    //          }else{
+    //              if(index == 5){
+    //                  oList.style.left = 0;
+    //              }
+    //              clearInterval(timer);
+    //              isChange2 = true;
+    //          }
+    //      },1);
+    //  }
+    //
+    //  for(var k=0;k<aBtn.length;k++){
+    //      aBtn[k].onclick = function () {
+    //          if(isChange2){
+    //              var thisBtn= this.getAttribute("this-type");
+    //              if(thisBtn == "next"){
+    //                  changeImg(globalIndex+=1);
+    //                  dirction = -10;
+    //              }else{
+    //                  changeImg(globalIndex -= 1);
+    //                  dirction = 10;
+    //              }
+    //          }
+    //
+    //      }
+    //  }
+
+
 </script>
 </body>
 </html>
