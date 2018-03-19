@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li {
+            float: left;
+        }
+        .slider-box{
+            position: relative;
+            width: 520px;
+            height: 280px;
+        }
+        .slider-img{
+            position: absolute;
+            top:0;
+            left:0;
+        }
+        .slider-nav{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        .slider-btn{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+        }
+        .slider-nav li,.slider-btn li{
+            height: 0;
+            width: 0;
+            background-color: #00aaee;
+            color: #ff6600;
+            line-height: 0;
+            text-align: center;
+            margin-left: 10px;
+        }
+        .slider-img .active{
+            display
+        }
+    </style>
+</head>
+<body>
+<div class="slider-box">
+    <div class="slider-img">
+        <ul>
+            <li><img src="../../img/07.jpg" alt=""></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="slider-nav">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <div class="slider-btn">
+        <ul>
+            <li>&lg;</li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script src="../../js/jquery/jquery-3.3.1.js"></script>
+<script>
+    var globalIdex =0;
+    setInterval(function () {
+        changgeImg
+    },1000)
+    function changeImg(index) {
+
+    }
+</script>
+</body>
+</html>
