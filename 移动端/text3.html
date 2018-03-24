@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header, footer, nav{
+            height: 100px;
+            background-color: #bbbbbb;
+            max-width: 960px;
+            width: 100%;
+            margin: 10px auto;
+            text-align: center;
+            line-height: 100px;
+        }
+        article{
+            max-width: 960px;
+            width: 100%;
+            margin: 0 auto;
+            display: block;}
+        section {
+            height: 300px;
+        }
+        section {
+            float: left;
+            text-align: center;
+            display: table;
+        }
+        p{
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+        }
+        /*article{*/
+           /**/
+        /*}*/
+        .left{
+            background-color: #00aaee;
+            color: black;
+            width: 70%;
+        }
+        .right{
+            background-color: #ff6600;
+            color: black;
+            width: 25%;
+            margin-left: 5%;
+        }
+        .clearfix:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .back{
+            background-image: url("../img/01.jpg");
+            max-width: 960px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+@media (max-width: 600px) {
+    .clearfix section{
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+}
+</style>
+</head>
+
+<body>
+    <header class="dog">头部</header>
+    <nav class="dog">导航</nav>
+    <div class="box1">
+        <div class="back">
+
+        </div>
+            <article class="clearfix">
+                <section class="left"><p>input::-webkit-input-placeholder {
+                    color:#ccc; /*修改webkit中input的planceholder样式*/
+                    input:focus::-webkit-input-placeholder {
+                    color:#f00; /*修改webkit中focus状态下input的planceholder样式*/
+                    bod-webkit-text-size-adjust: 100%!important; /*禁止IOS调整字体大小*input::-webkit-input-speech-button {
+                    display: none; /*隐藏Android的语音输入按钮*/</p> </section>
+                <section class="right"> <p>上面的文件上传框中，accept 可以限制上传文件的类型，参数为 image/* 是所有图片类型，点击会弹出图库，也可以指定图片格式，参
+                    数设置成 image/png 则可以限制图片类型为png；参数如果为 video/* 则是选择视频的意思；accept 还可以设置多个文件格式，语法为 accept="imag</p>
+                </section>
+            </article>
+    <footer class="dog1">页脚</footer>
+</div>
+</body>
+</html>
