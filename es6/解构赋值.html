@@ -16,11 +16,68 @@
 // let{name:a,age:b}=obj;
 // console.log(a,b); 
 
-function foo () {
-    return "123"
-}
-let [a,b,c] = foo();
-console.log(a,b,c);
+// function foo () {
+//     return "123"
+// }
+// let [a,b,c] = foo();
+// console.log(a,b,c);
+
+// let a = 4;
+// let b = 5;
+// [a,b] = [b,a];
+// console.log(a,b);
+ 
+//  let jsonStr = '{"name":"xiaoming","age":"18","school":"hebin"}';
+//  let{name,age,school}=JSON.parse(jsonStr);
+//  console.log(name,age,school)
+
+  // function foo(defen){
+  //  if(defen<60){ return "差";}
+  //  if(defen<80){ return "中";}
+  //  if(defen<90){ return "良";}
+  //  if(defen<=100){ return "优";}
+  //  return;
+  //  var jieguo="return 使用实例";
+  // }
+  // var c = foo(o);
+  // console.log(c);
+  
+
+  // let arr = [0,1,2,3,4];
+  // let [a,b,c,d,e]=arr;
+  // console.log(a,b,c,d);
+  
+  // let obj = {
+  //   name:"xiao",
+  //   age:"18"
+  // }
+  // let {name:a,age:b}=obj;
+  // console.log(a,b);
+  
+
+
+  // let str ='hel o world!';
+  // let [a,b,c,d,e,f] = str;
+  // console.log(a,b,c,d,e,f);
+  
+
+
+  // function foo([x=0,y=0]){
+  //     return x+y;
+  // }
+  // let arr = [5,1];
+ 
+  // console.log(foo(arr));
+  
+
+    function foo ({name,age,school='df'} ){
+      console.log(name,age,school);
+    }
+    let obj1 ={
+      name:"xiao",age:"12"
+    }
+    foo(obj1);
+
 
 
 </script>
