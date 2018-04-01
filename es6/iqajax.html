@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/jquery/jquery-3.3.1.js"></script>
+    <script>
+    // $get("package.json",function(ref){
+    //     console.log(ref);
+        
+    // },JSON)
+
+        let pro1 =new Promise(function(resolve,){
+            setTimeout(function() {
+                resolve();
+
+            }, 1000);
+        }).then(function(){console.log("sucess");
+        }).catch(function(){console.log("fase");
+        })
+
+    </script>
+</body>
+</html>
