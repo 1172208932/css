@@ -9,15 +9,46 @@
 <body>
     <div id="app">
         <ul><li v-for="(school,index) in schools">{{school}}</li></ul>
+        <ul><li v-for="newarr in arrsort">{{newarr.name}}--{{newarr.age}}--{{newarr.company}}</li></ul>
     </div>
+
     <script src="js/vue.js"></script>
     <script>
     new Vue({
         el:"#app",
         data:{
-            schools:['金融','农大','琳达','黑大']
-        }
-    });
-    </script>
+            schools:['金融','农大','琳达','黑大'],
+            obj:{
+                name:"ds",
+                age:"12",
+                company:"baidu"
+            },
+            arr1:[{
+                name:"ds",
+                age:"16",
+                company:"wei"
+                },{
+                name:"as",
+                age:"13",
+                company:"yte"
+                },
+                {
+                name:"wq",
+                age:"14",
+                company:"baidu"
+                }],
+                computed:{
+                    arrsort(){
+                        return this.arr.sort(function(a,b) {
+                            return a.age - b.age
+                        })
+                        
+                    }
+                }
+            }
+
+        
+    })
+</script>
 </body>
 </html>

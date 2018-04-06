@@ -11,14 +11,22 @@
         <span v-if="islogin">welcome</span>
         <!-- <span>登陆</span> -->
     </div>
+    <div id="qq" v-if="random>0.5 ?ture: false">dayude</div>
+    <div v-else>xxxxxxxxxx</div>
     <script src="js/vue.js"></script>
     <script>
-        new Vel({
+        new Vel({ 
             el:'#app',
             data:{
                 islogin:false
             }
 
+        })
+        new Vel({
+            el:'#qq',
+            data:{
+                random = Math.random()
+            }
         })
     </script>
 </body>
