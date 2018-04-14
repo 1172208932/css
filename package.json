@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/1172208932/css/issues"
   },
-  "homepage": "https://github.com/1172208932/css#readme"
+  "homepage": "https://github.com/1172208932/css#readme",
+  "devDependencies": {
+    "webpack": "^4.5.0"
+  }
 }
