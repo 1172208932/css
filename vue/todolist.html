@@ -7,9 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="../博客/css/bootstrap.min.css">
     <style>
-    .red{
-    background-color: red
-    }
+        .red{
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -47,17 +47,16 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr v-for='(product,index) in productList' @click='select(product)' :class="{red:product.isRed}">
-                            <th scope="row"><input type="checkbox" @click.stop></th>
-                            <td>{{ product.name }}</td>
-                            <td>{{  product.price }}</td>
-                            <td><button @click.stop='delProduct(index)' type="button" class="btn btn-danger glyphicon glyphicon-remove">删除</button></td>
+                          <tr v-for="goodss in goods" @click="" :class="sred:mm">
+                            <th scope="row"><input type="checkbox" ></th>
+                            <td>{{goodss.name}}</td>
+                            <td>{{goodss.price}}</td>
+                            <td><button  type="button" class="btn btn-danger glyphicon glyphicon-remove">删除</button></td>
                           </tr>
                           <tr>
                             <td><button type="button" class="btn btn-danger">删除选中</button></td>
-                            <td colspan="3">总价：{{csum}}元</td>
-                          </tr>
-                         
+                            <td colspan="3"></td>
+                          </tr>                         
                         </tbody>
                       </table>
         </div>
@@ -66,62 +65,31 @@
     <script src="../博客/js/bootstrap.min.js"></script>
     <script src="vue.js"></script>
     <script>
-        new Vue ({
-          el:'#app',
-          data:{
-            
-             productList:[{
-            name:'衣服',
-            price:289,
-            isRed:false,
-                       },{
-            name:'手机',
-            price:6999,
-            isRed:false,
-                       },{
-            name:'电脑',
-            price:3999,
-            isRed:false,
-                       },{
-            name:'鞋  ',
-            price:567,
-            isRed:false,
-            
-          }],
-          sum:0
-          },
-          methods:{
-            select(product){
-              product.isRed = !product.isRed;
-            //   if(product.isRed){
-            //   this.sum += product.price;
-            //    }else{
-            //     this.sum -= product.price;
-            //  }
-            }, 
-            delProduct(index){
-              this.productList.splice(index,1);
+        new Vue({
+            el:"#app",
+            data:{
+                sred:"red",
+                mm:true,
+                goods:[{
+                    name:"鞋",
+                    price:"523"
+                },{
+                    name:"上衣",price:"345"
+                },{
+                    name:"裤子",price:"255"
+                },{
+                    name:"手机",price:"6345"
+                },{
+                    name:"电脑",price:"3245"
+                },{
+                    name:"袜子",price:"45"
+                }]
             },
-            addProduct(index){
-              this.productList.splice(index,0,);
-            }
-          },
-          computed:{
-            csum(){
-              let temp = 0;
-              this.productList.forEach((element,index) => {
-                if(element.isRed){
-                  temp += element.price
-                }
-              });
-              return temp;
-            }
-          }
+            methods:{
+                isred(){
 
-// let narr = nar.filters((val,index)=>{
-      // if(arr.includes(4)){log()}
-// })
-        
+                }
+            }
         })
     </script>
 </body>

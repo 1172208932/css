@@ -8,12 +8,13 @@
 </head>
 <body>
     <div id="app">
-        用户名：<input type="text" v-model='username'>
-        <h4>用户名是{{username}}：</h4>
+        用户名：<input type="text" v-model.lazy='username'>
+        <input type="radio">
+        <h4>用户名是：{{username}}</h4>
     </div>
-    <script src="js/vue.js"></script>
+    <script src="vue.js"></script>
     <script>
-        new vue ({
+        new Vue ({
             el:'#app',
             data:{
                 username:''

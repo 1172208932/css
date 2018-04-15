@@ -8,13 +8,17 @@
 </head>
 <body>
     <div id="app">
-        <ul><li v-for="(school,index) in schools">{{school}}</li></ul>
-        <ul><li v-for="newarr in arrsort">{{newarr.name}}--{{newarr.age}}--{{newarr.company}}</li></ul>
-    </div>
+        <!-- <ul><li v-for="(school,index) in schools">{{school}}</li></ul> -->
+       
+            <ul><li v-for="newarr in arrsort">1{{newarr.name}}--{{newarr.age}}--{{newarr.company}}</li></ul>
+            <!-- <div v-for="(school,ind) in schools">{{school}}{{ind}}</div> -->
+            <!-- <div v-for="(obj1,ui) in arr1" v-for="arrsort">{{obj1.name}}---{{obj1.age}}---{{ui}}</div> -->
+    
+        </div>
 
     <script src="js/vue.js"></script>
     <script>
-    new Vue({
+    let rr = new Vue({
         el:"#app",
         data:{
             schools:['金融','农大','琳达','黑大'],
@@ -25,30 +29,33 @@
             },
             arr1:[{
                 name:"ds",
-                age:"16",
+                age:16,
                 company:"wei"
                 },{
                 name:"as",
-                age:"13",
+                age:13,
                 company:"yte"
                 },
                 {
                 name:"wq",
-                age:"14",
+                age:14,
                 company:"baidu"
-                }],
-                computed:{
+                }]
+                
+            },
+            computed:{
                     arrsort(){
-                        return this.arr.sort(function(a,b) {
+                        return this.arr1.sort(function(a,b) {
                             return a.age - b.age
                         })
                         
                     }
-                }
-            }
+                  
 
-        
-    })
+                    }
+                }
+
+    )
 </script>
 </body>
 </html>
