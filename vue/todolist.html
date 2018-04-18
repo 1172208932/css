@@ -7,33 +7,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="../博客/css/bootstrap.min.css">
     <style>
-        .red{
+        .redd{
             background-color: red;
         }
     </style>
 </head>
 <body>
-        <div class="container" id='app'>
+    <div class="container" id='app'>
                 <h1 class="mt-5 text-center">购物车<span class="badge badge-secondary"></span></h1>
                 <hr class="mt-5 mb-5">
 
-                <form class="row form-inline text-center mb-2">
                     <div class="form-group text-center" >
-                        <input type="text"  id="inputHelpBlock" class="form-control" aria-describedby="helpBlock" placeholder="请输入关键字">
-                        <button class="btn btn-default" type="submit">搜索</button>
+                        <input v-model="sear" type="text"  id="inputHelpBlock" class="form-control" aria-describedby="helpBlock" placeholder="请输入关键字">
+                        <button @click="search" class="btn btn-default" type="submit">搜索</button>
                     </div>
-                  </form>
+                  
                 
                 <div class="row form-inline mb-2">
                           <div class="form-group">
                         <label for="exampleInputName2">商品名称</label>
-                        <input type="text" class="form-control" id="exampleInputName2" placeholder="请输入名称">
+                        <input v-model="name" type="text" class="form-control" id="exampleInputName2" placeholder="请输入名称">
                       </div>
                       <div class="form-group">
                             <label for="exampleInputEmail2">商品价格</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入价格">
+                            <input v-model.number="price" type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入价格">
                           </div>
-                          <button class="btn btn-default" type="submit">添加</button>
+                          <button @click="addlist" class="btn btn-default" type="submit">添加</button>
                       </div>
                 
                 <table class="table table-bordered text-center ">
@@ -47,19 +46,19 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <tr v-for="goodss in goods" @click="" :class="sred:mm">
+                          <tr v-for="goodss in goods" @click="isred(goodss)" :class="{'redd':goodss.mm}">
                             <th scope="row"><input type="checkbox" ></th>
                             <td>{{goodss.name}}</td>
                             <td>{{goodss.price}}</td>
-                            <td><button  type="button" class="btn btn-danger glyphicon glyphicon-remove">删除</button></td>
+                            <td><button @click.stop="del(goodss)" type="button" class="btn btn-danger glyphicon glyphicon-remove">删除</button></td>
                           </tr>
                           <tr>
-                            <td><button type="button" class="btn btn-danger">删除选中</button></td>
-                            <td colspan="3"></td>
+                            <td><button  type="button" class="btn btn-danger">删除选中</button></td>
+                            <td colspan="3">{{sum}}</td>
                           </tr>                         
                         </tbody>
                       </table>
-        </div>
+    </div>
     <script src="../博客/js/jquery-3.3.1.min.js"></script>
     <script src="../博客/js/popper.min.js"></script>
     <script src="../博客/js/bootstrap.min.js"></script>
@@ -68,26 +67,53 @@
         new Vue({
             el:"#app",
             data:{
-                sred:"red",
-                mm:true,
+                sear:"",
+                sum:0,
+                name:"",
+                price:0,
                 goods:[{
+                    mm:false,
                     name:"鞋",
-                    price:"523"
+                    price:523
                 },{
-                    name:"上衣",price:"345"
+                    mm:false, name:"上衣",price:345
                 },{
-                    name:"裤子",price:"255"
+                    mm:false, name:"裤子",price:255
                 },{
-                    name:"手机",price:"6345"
+                    mm:false, name:"手机",price:6345
                 },{
-                    name:"电脑",price:"3245"
+                    mm:false, name:"电脑",price:3245
                 },{
-                    name:"袜子",price:"45"
+                    mm:false, name:"袜子",price:45
                 }]
             },
             methods:{
-                isred(){
-
+                isred(obj){  
+                     if(val.mm){
+                        this.sum -= val.price
+                    }else{
+                        this.sum += val.price
+                    }
+                    obj.mm = !obj.mm;
+                 
+                },
+                addlist(){
+                    this.goods.push({
+                        name:this.name,
+                        price:this.price,
+                        mm:false
+                    })
+                },
+                del(index){
+                   this.goods.splice(index,1)
+                },
+                search(){
+                    let newArr = this.goods.filter((val,index)=>{
+                        if(val.name.includes(this.sear)){
+                            return val;
+                        }
+                    })
+                    this.goods = newArr;
                 }
             }
         })
