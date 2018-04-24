@@ -1,0 +1,26 @@
+ 
+.navbar{  
+    flex: none;  
+    display: flex;  
+    background: rgb(89, 10, 163);  
+  }  
+  .navbar .item{  
+    position: relative;  
+    flex: auto;  
+    text-align: center;  
+    line-height: 80rpx;  
+  }  
+  .navbar .item.active{  
+    color: rgb(33, 8, 92);  
+  }  
+  .navbar .item.active:after{  
+    content: "";  
+    display: block;  
+    position: absolute;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    height: 4rpx;  
+    background: #FFCC00;  
+  }  
+  /* topbar  end*/
