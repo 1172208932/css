@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    [v-cloak]{
+        display: none;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='div1'>弹框</button>
+        <button @click='div2'>弹框</button>
+        <dialoga v-show="diashow" @close="diashow = false">
+            <span slot="title">第一个标枪</span>
+        </dialoga>
+        <dialoga v-show="dia2show">
+            <span slot="title">第一个标枪</span>
+        </dialoga>
+    </div>
+    <template id="dialog">
+        <div class="dia-bg">
+            <div class="dia-container">
+                <div class="title">
+                    <slot></slot>
+                    <span @click: "$emit('close')">[x]</span>
+                </div>
+                <div class="content">
+                    内容
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("dialoga", {
+            template: "#dialog",
+            methods: {
+                close() {
+
+                }
+            }
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                diashow: false,
+                dia2show: false,
+            },
+            methods: {
+                dia1() {
+                    this.diashow = true,
+                                },
+                dia2() {
+                    this.dia2show = true
+                }
+
+            }
+        })
+
+
+
+    </script>
+</body>
+
+</html>

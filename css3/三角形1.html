@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #triangle-up {
+    width: 40px;
+    height: 40px;
+    background-color: red
+}
+
+   #triangle-up:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 200rpx;
+  right: 0;
+
+
+      width: 0;
+    height: 0;
+    border-left: 7rpx solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #5d429b;
+}
+    
+    </style>
+</head>
+<body>
+    <div id="triangle-up"></div>
+</body>
+</html>
