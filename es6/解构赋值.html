@@ -100,7 +100,40 @@
 // 　　};
 
 // 　　alert(object.getNameFunc()());
+  
+let {toString:s} = 123;
+// s == Number.prototylpe.toString 
+console.log(s)
+let x =1;
+let y =2;
+[x,y] = [y,x]
+console.log(x,y)
 
+// function example (){
+//     return [0,1,2];
+// }
+// let [a,b,c] = example()
+// console.log(a,b,c)
+
+// function example (){
+//     return {
+//         foo:1,
+//         bar:2
+//     }
+// }
+// let {foo,bar} = example()
+// console.log(foo,bar)
+ 
+
+// let jsonData = {
+//     id:23,
+//     status:"OK",
+//     data:[867,6409]
+// }
+
+// let {id , status, data: number} = jsonData;
+
+// console.log(id,status,number)
 
 
 
